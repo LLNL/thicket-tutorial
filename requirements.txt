@@ -1,2 +1,2 @@
-llnl-thicket==2023.1.0
+llnl-thicket
 ipython
