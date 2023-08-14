@@ -1,7 +1,7 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/llnl/thicket-tutorial/develop)
 
 
-# <img src="https://raw.githubusercontent.com/llnl/thicket/develop/logo-notext.png" # width="64" valign="middle" alt="thicket"/> Thicket Tutorial
+# <img src="https://raw.githubusercontent.com/llnl/thicket/develop/logo-notext.png" width="64" valign="middle" alt="thicket"/> Thicket Tutorial
 
 
 Thicket is a python-based toolkit for Exploratory Data Analysis (EDA) of
