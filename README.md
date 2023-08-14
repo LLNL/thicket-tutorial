@@ -1,7 +1,7 @@
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/llnl/thicket-tutorial/develop)
 
 
-# <img src="https://raw.githubusercontent.com/llnl/thicket/develop/logo-notext.png" width="64" valign="middle" alt="thicket"/> Thicket
+# <img src="https://raw.githubusercontent.com/llnl/thicket/develop/logo-notext.png" # width="64" valign="middle" alt="thicket"/> Thicket Tutorial
 
 
 Thicket is a python-based toolkit for Exploratory Data Analysis (EDA) of
@@ -13,11 +13,12 @@ scale) and finding actionable insights in multi-dimensional, multi-scale,
 multi-architecture, and multi-tool performance datasets.
 
 You can find detailed documentation, along with non-interactive tutorials from this repository of Thicket in the
-[ReadtheDocs](https://thicket.readthedocs.io/en/latest/).
+[ReadTheDocs](https://thicket.readthedocs.io/en/latest/).
 
 This repository contains materials for Thicket's hands-on tutorial. You can do
 all of the exercises on your own laptop using BinderHub.
 
+You find Thicket itself in its Github repository: https://github.com/llnl/thicket
 
 ### Running the notebooks online
 
