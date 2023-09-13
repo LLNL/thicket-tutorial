@@ -1,0 +1,14 @@
+{
+    "thicket_tutorial": {
+        "thicket_fname": "docs/thicket_tutorial.ipynb",
+        "tutorial_fname": "notebooks/01_thicket_tutorial.ipynb"
+    },
+    "extrap-with-metadata-aggregated": {
+        "thicket_fname": "docs/extrap-with-metadata-aggregated.ipynb",
+        "tutorial_fname": "notebooks/02_extrap-with-metadata-aggregated.ipynb"
+    },
+    "thicket_rajaperf_clustering": {
+        "thicket_fname": "docs/thicket_rajaperf_clustering.ipynb",
+        "tutorial_fname": "notebooks/03_thicket_rajaperf_clustering.ipynb"
+    }
+}

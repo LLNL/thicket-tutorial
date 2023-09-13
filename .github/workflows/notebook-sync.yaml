@@ -1,0 +1,27 @@
+name: Sync thicket docs with executed notebook from thicket-tutorial
+
+on:
+  push:
+    branches: [ develop ]
+      
+jobs:
+  parse_file_tracker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Parse config file
+        id: parse
+        run: |
+          jq_out=$(cat .github/workflows/tutorials_sync.json | jq -r 'to_entries|map("\(.key) \(.value.thicket_fname) \(.value.tutorial_fname)")|.[]')
+          IFS=$'\n' rows=( $( echo "$jq_out" | while read -r; do echo "$REPLY"; done ) )
+          out_list="["
+          change_track_filter=""
+          for row in "${rows[@]}"; do
+              arr=( $( xargs -n1 <<<"$row" ) )
+              out_list="$out_list{'name': '${arr[0]}', 'thicket_file': '${arr[1]}', 'tutorials_file': '${arr[2]}'},"
+              change_track_filter="${change_track_filter}${arr[0]}:\n  - ${arr[1]}\n"
+          done
+          out_list=${out_list%?}
+          out_list="$out_list]"
+          echo "tracked_files=$out_list" >> "$GITHUB_OUTPUT"
+          echo "change_track_filter=$change_track_filter" >> "$GITHUB_OUTPUT"
