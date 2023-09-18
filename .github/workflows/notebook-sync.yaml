@@ -19,12 +19,13 @@ jobs:
           for row in "${rows[@]}"; do
               arr=( $( xargs -n1 <<<"$row" ) )
               out_list="$out_list{'name': '${arr[0]}', 'thicket_file': '${arr[1]}', 'tutorials_file': '${arr[2]}'},"
-              change_track_filter="${change_track_filter}${arr[0]}:\n  - ${arr[1]}\n"
+              change_track_filter="${change_track_filter}${arr[0]}:\n  - ${arr[2]}\n"
           done
           out_list=${out_list%?}
           out_list="$out_list]"
           echo "tracked_files=$out_list" >> "$GITHUB_OUTPUT"
           echo "change_track_filter=$change_track_filter" >> "$GITHUB_OUTPUT"
+
   detect_changes:
     needs: parse_file_tracker
     runs-on: ubuntu-latest
