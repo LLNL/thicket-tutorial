@@ -25,3 +25,21 @@ jobs:
           out_list="$out_list]"
           echo "tracked_files=$out_list" >> "$GITHUB_OUTPUT"
           echo "change_track_filter=$change_track_filter" >> "$GITHUB_OUTPUT"
+  detect_changes:
+    needs: parse_file_tracker
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Get changed files
+        uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            ${{ needs.outputs.change_track_filter }}
+      - name: Get number of changed files
+        id: calc_num
+        env:
+          changes: ${{ toJSON(changes.changes) }}
+        run: |
+          num_changes=$(echo $changes | jq '. | length')
+          echo "num_changes=$num_changes" >> "$GITHUB_OUTPUT"
