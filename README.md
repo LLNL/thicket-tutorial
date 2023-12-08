@@ -29,6 +29,35 @@ You can access the interactive environment at this
 [link](https://mybinder.org/v2/gh/llnl/thicket-tutorial/develop)
 or by clicking the badge at the top of this file.
 
+### Running the notebooks locally
+
+We provide a Dockerfile for users to run the notebooks locally. To run locally *and interactively*, you must first build the Docker container with:
+
+```bash
+$ docker build -t thicket-tutorial -f Dockerfile .
+```
+
+Then, you must create a Docker network with:
+
+```bash
+$ docker network create jupyterhub
+```
+
+Finally, you can launch the tutorial. To launch the tutorial without preserving any changes, run:
+
+```bash
+$ docker run --rm -it --entrypoint /start.sh -v /var/run/docker.sock:/var/run/docker.sock --net jupyterhub --name jupyterhub -p 8888:8888 thicket-tutorial
+```
+
+If you would rather your changes be preserved, run:
+
+```bash
+$ docker run --rm -it --entrypoint /start.sh -v /var/run/docker.sock:/var/run/docker.sock -v .:/home/jovyan --net jupyterhub --name jupyterhub -p 8888:8888 thicket-tutorial
+```
+
+Alternatively, if you want to run the notebooks automatically (i.e., non-interactive), you can simply run the `dev_scripts/autorun.sh` script. This script executes the same commands as above, but it uses the `run_all.sh` script as an entrypoint instead of `start.sh`.
+
+The Docker-based code for running this tutorial locally was derived from the material from the 2023 RADIUSS tutorial for Flux, which can be found here: https://github.com/flux-framework/Tutorials/tree/master/2023-RADIUSS-AWS/JupyterNotebook
 
 ### License
 
