@@ -1,4 +1,4 @@
-FROM continuumio/miniconda3:23.5.2-0
+FROM continuumio/miniconda3:4.12.0
 
 USER root
 
@@ -24,7 +24,7 @@ RUN apt-get update \
 RUN conda install -y -c conda-forge \
     jupyter \
     jupyterlab \
-    ipykernel
+    ipython
 
 COPY ./requirements.txt ./requirements.txt
 
