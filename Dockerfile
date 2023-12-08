@@ -38,8 +38,8 @@ WORKDIR ${HOME}
 ENV PATH="${HOME}/.local/bin:${PATH}"
 
 COPY --chown=${NB_USER} ./notebooks/01_thicket_tutorial.ipynb ./notebooks/01_thicket_tutorial.ipynb
-COPY --chown=${NB_USER} ./notebooks/02_extrap-with-metadata-aggregated.ipynb ./notebooks/02_extrap-with-metadata-aggregated.ipynb
-COPY --chown=${NB_USER} ./notebooks/03_thicket_rajaperf_clustering.ipynb ./notebooks/03_thicket_rajaperf_clustering.ipynb
+COPY --chown=${NB_USER} ./notebooks/02_thicket_rajaperf_clustering.ipynb ./notebooks/02_thicket_rajaperf_clustering.ipynb
+COPY --chown=${NB_USER} ./notebooks/03_extrap-with-metadata-aggregated.ipynb ./notebooks/03_extrap-with-metadata-aggregated.ipynb
 COPY --chown=${NB_USER} ./data/ ./data/
 
 COPY ./docker_scripts/entrypoint.sh /entrypoint.sh
