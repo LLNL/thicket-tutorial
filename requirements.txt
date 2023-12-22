@@ -1,4 +1,5 @@
-llnl-thicket==2023.2.0
+llnl-thicket==2023.3.1
 ipython==7.15.0
 extrap
 scikit-learn
+seaborn
