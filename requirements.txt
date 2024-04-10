@@ -1,4 +1,4 @@
-llnl-thicket==2023.3.1
+llnl-thicket==2024.1.0
 ipython==7.15.0
 extrap
 scikit-learn
