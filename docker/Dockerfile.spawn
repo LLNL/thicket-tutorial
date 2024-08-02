@@ -1,0 +1,79 @@
+FROM continuumio/miniconda3:4.12.0
+
+USER root
+
+ENV NB_USER=jovyan \
+    NB_UID=1000 \
+    HOME=/home/jovyan
+
+RUN adduser \
+    --disabled-password \
+    --gecos "Default User" \
+    --uid ${NB_UID} \
+    --home ${HOME} \
+    --force-badname \
+    ${NB_USER}
+
+RUN apt-get update \
+    && apt-get upgrade -y \
+    && apt-get install -y --no-install-recommends \
+    build-essential \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN conda install -y -c conda-forge \
+    jupyter \
+    jupyterlab \
+    ipython
+
+# COPY ./requirements.txt ./requirements.txt
+# COPY ./docker/requirements-cloud.txt ./requirements-cloud.txt
+COPY ./environment.yml ./environment.yml
+
+# RUN python3 -m pip install -r requirements.txt \
+#     && python3 -m pip install papermill
+
+# RUN conda install -y -c conda-forge --file requirements.txt
+# RUN conda install -y -c conda-forge --file requirements-cloud.txt
+# RUN python3 -m pip install papermill && \
+#     python3 -m pip install ipython==7.34.0 && \
+RUN conda env update -n base --file environment.yml
+RUN python3 -m IPython kernel install
+
+# RUN python3 -m pip install -r requirements-cloud.txt && \
+#     python3 -m pip install ipython==7.34.0 && \
+#     python3 -m IPython kernel install
+
+RUN python3 -m pip install jupyter_app_launcher && \
+    python3 -m pip install --upgrade jupyter-server && \
+    mkdir -p /usr/local/share/jupyter/lab/jupyter_app_launcher
+
+COPY ./docker/jupyter-launcher.yaml /usr/local/share/jupyter/lab/jupyter_app_launcher
+
+RUN chown -R ${NB_USER} "${HOME}"
+
+WORKDIR ${HOME}
+
+COPY --chown=${NB_USER} ./notebooks/01_thicket_tutorial.ipynb ./notebooks/01_thicket_tutorial.ipynb
+COPY --chown=${NB_USER} ./notebooks/02_thicket_rajaperf_clustering.ipynb ./notebooks/02_thicket_rajaperf_clustering.ipynb
+COPY --chown=${NB_USER} ./notebooks/03_extrap-with-metadata-aggregated.ipynb ./notebooks/03_extrap-with-metadata-aggregated.ipynb
+COPY --chown=${NB_USER} ./notebooks/04_stats-functions.ipynb ./notebooks/04_stats-functions.ipynb
+COPY --chown=${NB_USER} ./notebooks/05_thicket_query_language.ipynb ./notebooks/05_thicket_query_language.ipynb
+COPY --chown=${NB_USER} ./data/ ./data/
+COPY --chown=${NB_USER} ./thicket-logo.png ./thicket-logo.png
+
+ENV SHELL=/usr/bin/bash
+EXPOSE 8888
+ENTRYPOINT [ "tini", "--" ]
+
+COPY ./docker/entrypoint.sh /entrypoint.sh
+COPY ./docker/start.sh /start.sh
+COPY ./docker/run_all.sh /run_all.sh
+
+RUN mkdir -p $HOME/.local/share && \
+    chmod 777 $HOME/.local/share
+
+USER ${NB_USER}
+ENV PATH="${HOME}/.local/bin:${PATH}"
+
+CMD [ "jupyter", "notebook" ]

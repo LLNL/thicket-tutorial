@@ -1,0 +1,131 @@
+- title: "Chapter 1: Thicket 101"
+  description: Intro to Thicket and basics
+  type: jupyterlab-commands
+  icon: ./thicket-logo.png
+  source:
+    - label: Thicket Tutorial
+      id: 'filebrowser:open-path'
+      args:
+        path: 01_thicket_tutorial.ipynb
+        icon: ./thicket-logo.png
+  catalog: Notebook
+- title: "Chapter 2: Clustering RAJAPerf"
+  description: Using Thicket to cluster data from the RAJA Performance Suite
+  type: jupyterlab-commands
+  icon: ./thicket-logo.png
+  source:
+    - label: Thicket Tutorial
+      id: 'filebrowser:open-path'
+      args:
+        path: 02_thicket_rajaperf_clustering.ipynb
+        icon: ./thicket-logo.png
+  catalog: Notebook
+- title: "Chapter 3: Modeling with Extra-P"
+  description: Modeling applications using Thicket and Extra-P
+  type: jupyterlab-commands
+  icon: ./thicket-logo.png
+  source:
+    - label: Thicket Tutorial
+      id: 'filebrowser:open-path'
+      args:
+        path: 03_extrap-with-metadata-aggregated.ipynb
+        icon: ./thicket-logo.png
+  catalog: Notebook
+- title: "Chapter 4: Stats and Visualization"
+  description: Using Thicket to calculate statistics and visualize performance across runs
+  type: jupyterlab-commands
+  icon: ./thicket-logo.png
+  source:
+    - label: Thicket Tutorial
+      id: 'filebrowser:open-path'
+      args:
+        path: 04_stats-functions.ipynb
+        icon: ./thicket-logo.png
+  catalog: Notebook
+- title: "Chapter 5: Call Graph Query Language"
+  description: Using Thicket's query language for advanced filtering
+  type: jupyterlab-commands
+  icon: ./thicket-logo.png
+  source:
+    - label: Thicket Tutorial
+      id: 'filebrowser:open-path'
+      args:
+        path: 05_thicket_query_language.ipynb
+        icon: ./thicket-logo.png
+  catalog: Notebook
+- title: "Chapter 6: Composing Datasets with Groupby-Aggregate"
+  description: Using Thicket's groupby-aggregate functionality to compose datasets 
+  type: jupyterlab-commands
+  icon: ./thicket-logo.png
+  source:
+    - label: Thicket Tutorial
+      id: 'filebrowser:open-path'
+      args:
+        path: 06_groupby_aggregate_of_multirun_data.ipynb
+        icon: ./thicket-logo.png
+  catalog: Notebook
+
+- title: Thicket ReadTheDocs
+  description: Documentation for Thicket
+  source: https://thicket.readthedocs.io/en/latest/
+  type: url
+  catalog: Thicket Resources
+  args:
+      sandbox: [ 'allow-same-origin', 'allow-scripts', 'allow-downloads', 'allow-modals', 'allow-popups']
+- title: Thicket Repository 
+  description: Repository for Thicket
+  source: https://github.com/llnl/thicket
+  type: url
+  catalog: Thicket Resources
+  args:
+      sandbox: [ 'allow-same-origin', 'allow-scripts', 'allow-downloads', 'allow-modals', 'allow-popups']
+- title: Hatchet Documentation 
+  description: Documentation for Hatchet 
+  source: https://llnl-hatchet.readthedocs.io/en/latest/
+  type: url
+  catalog: Thicket Resources
+  args:
+      sandbox: [ 'allow-same-origin', 'allow-scripts', 'allow-downloads', 'allow-modals', 'allow-popups']
+- title: Hatchet Repository 
+  description: Repository for Hatchet 
+  source: https://github.com/llnl/hatchet
+  type: url
+  catalog: Thicket Resources
+  args:
+      sandbox: [ 'allow-same-origin', 'allow-scripts', 'allow-downloads', 'allow-modals', 'allow-popups']
+
+- title: Thicket Paper 
+  description: HPDC'23 Paper on Thicket
+  source: https://doi.org/10.1145/3588195.3592989
+  type: url
+  catalog: Thicket Publications
+  args:
+      sandbox: [ 'allow-same-origin', 'allow-scripts', 'allow-downloads', 'allow-modals', 'allow-popups']
+- title: Hatchet Paper 
+  description: SC'19 Paper on Thicket
+  source: https://doi.org/10.1145/3295500.3356219
+  type: url
+  catalog: Thicket Publications
+  args:
+      sandbox: [ 'allow-same-origin', 'allow-scripts', 'allow-downloads', 'allow-modals', 'allow-popups']
+- title: Hatchet/Thicket Query Language Paper 
+  description: eScience'22 Paper on the Hatchet/Thicket Query Language
+  source: https://doi.org/10.1109/eScience55777.2022.00039
+  type: url
+  catalog: Thicket Publications
+  args:
+      sandbox: [ 'allow-same-origin', 'allow-scripts', 'allow-downloads', 'allow-modals', 'allow-popups']
+- title: Hatchet Interactive Visualization Paper
+  description: 2024 TVCG Paper on Hatchet's Interactive Visualizations
+  source: https://doi.org/10.1109/TVCG.2024.3354561
+  type: url
+  catalog: Thicket Publications
+  args:
+      sandbox: [ 'allow-same-origin', 'allow-scripts', 'allow-downloads', 'allow-modals', 'allow-popups']
+- title: Hatchet Improvements Paper
+  description: 2020 ProTools Workshop Paper at SC
+  source: https://doi.org/10.1109/HUSTProtools51951.2020.00013
+  type: url
+  catalog: Thicket Publications
+  args:
+      sandbox: [ 'allow-same-origin', 'allow-scripts', 'allow-downloads', 'allow-modals', 'allow-popups']
