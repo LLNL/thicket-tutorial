@@ -50,8 +50,6 @@ RUN python3 -m pip install jupyter_app_launcher && \
 
 COPY ./docker/jupyter-launcher.yaml /usr/local/share/jupyter/lab/jupyter_app_launcher
 
-RUN chown -R ${NB_USER} "${HOME}"
-
 WORKDIR ${HOME}
 
 COPY --chown=${NB_USER} ./notebooks/01_thicket_tutorial.ipynb ./notebooks/01_thicket_tutorial.ipynb
@@ -59,8 +57,11 @@ COPY --chown=${NB_USER} ./notebooks/02_thicket_rajaperf_clustering.ipynb ./noteb
 COPY --chown=${NB_USER} ./notebooks/03_extrap-with-metadata-aggregated.ipynb ./notebooks/03_extrap-with-metadata-aggregated.ipynb
 COPY --chown=${NB_USER} ./notebooks/04_stats-functions.ipynb ./notebooks/04_stats-functions.ipynb
 COPY --chown=${NB_USER} ./notebooks/05_thicket_query_language.ipynb ./notebooks/05_thicket_query_language.ipynb
+COPY --chown=${NB_USER} ./notebooks/06_groupby_aggregate_of_multirun_data.ipynb ./notebooks/06_groupby_aggregate_of_multirun_data.ipynb
 COPY --chown=${NB_USER} ./data/ ./data/
 COPY --chown=${NB_USER} ./thicket-logo.png ./thicket-logo.png
+
+RUN chown -R ${NB_USER} "${HOME}"
 
 ENV SHELL=/usr/bin/bash
 EXPOSE 8888
@@ -76,4 +77,4 @@ RUN mkdir -p $HOME/.local/share && \
 USER ${NB_USER}
 ENV PATH="${HOME}/.local/bin:${PATH}"
 
-CMD [ "jupyter", "notebook" ]
+CMD [ "jupyter", "lab" ]
