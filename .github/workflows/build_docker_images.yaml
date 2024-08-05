@@ -20,7 +20,7 @@ jobs:
                          ["thicket-tutorial-spawn", "docker/Dockerfile.spawn"]]
 
   steps:
-  - name: Clone the thicket-tutorial repo
+    - name: Clone the thicket-tutorial repo
     uses: actions/checkout@v4
 
   - name: Clean unneeded stuff in runner to make space for the Docker image
