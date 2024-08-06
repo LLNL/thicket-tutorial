@@ -36,25 +36,25 @@ or by clicking the badge at the top of this file.
 We provide a Dockerfile for users to run the notebooks locally. To run locally *and interactively*, you must first build the Docker container with:
 
 ```bash
-$ docker build -t thicket-tutorial -f Dockerfile .
+docker build -t thicket-tutorial -f Dockerfile.local .
 ```
 
 Then, you must create a Docker network with:
 
 ```bash
-$ docker network create jupyterhub
+docker network create jupyterhub
 ```
 
 Finally, you can launch the tutorial. To launch the tutorial without preserving any changes, run:
 
 ```bash
-$ docker run --rm -it --entrypoint /start.sh -v /var/run/docker.sock:/var/run/docker.sock --net jupyterhub --name jupyterhub -p 8888:8888 thicket-tutorial
+docker run --rm -it --entrypoint /start.sh -v /var/run/docker.sock:/var/run/docker.sock --net jupyterhub --name jupyterhub -p 8888:8888 thicket-tutorial --NotebookApp.token=''
 ```
 
 If you would rather your changes be preserved, run:
 
 ```bash
-$ docker run --rm -it --entrypoint /start.sh -v /var/run/docker.sock:/var/run/docker.sock -v .:/home/jovyan --net jupyterhub --name jupyterhub -p 8888:8888 thicket-tutorial
+docker run --rm -it --entrypoint /start.sh -v /var/run/docker.sock:/var/run/docker.sock -v .:/home/jovyan --net jupyterhub --name jupyterhub -p 8888:8888 thicket-tutorial
 ```
 
 Alternatively, if you want to run the notebooks automatically (i.e., non-interactive), you can simply run the `dev_scripts/autorun.sh` script. This script executes the same commands as above, but it uses the `run_all.sh` script as an entrypoint instead of `start.sh`.
@@ -68,31 +68,31 @@ If you want to use podman instead of docker, you can replace "docker" with "podm
 First initialize and start podman:
 
 ```bash
-$ podman machine init
-$ podman machine start
+podman machine init
+podman machine start
 ```
 
 Then build the container:
 
 ```bash
-$ podman build -t thicket-tutorial -f Dockerfile .
+podman build -t thicket-tutorial -f Dockerfile .
 ```
 
 Then create a network:
 
 ```bash
-$ podman network create jupyterhub
+podman network create jupyterhub
 ```
 
 Then launch the tutorial:
 
 ```bash
-$ podman run --rm -it --entrypoint /start.sh -v /var/run/docker.sock:/var/run/docker.sock --net jupyterhub --name jupyterhub -p 8888:8888 thicket-tutorial
+podman run --rm -it --entrypoint /start.sh -v /var/run/docker.sock:/var/run/docker.sock --net jupyterhub --name jupyterhub -p 8888:8888 thicket-tutorial
 ```
 
 Clean up after you are done:
 ```bash
-$ podman machine stop
+podman machine stop
 ```
 
 ### License
