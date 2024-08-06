@@ -36,25 +36,25 @@ or by clicking the badge at the top of this file.
 We provide a Dockerfile for users to run the notebooks locally. To run locally *and interactively*, you must first build the Docker container with:
 
 ```bash
-$ docker build -t thicket-tutorial -f docker/Dockerfile.spawn .
+docker build -t thicket-tutorial -f docker/Dockerfile.spawn .
 ```
 
 Then, you must create a Docker network with:
 
 ```bash
-$ docker network create jupyterhub
+docker network create jupyterhub
 ```
 
 Finally, you can launch the tutorial. To launch the tutorial without preserving any changes, run:
 
 ```bash
-$ docker run --rm -it --entrypoint /start.sh -v /var/run/docker.sock:/var/run/docker.sock --net jupyterhub --name jupyterhub -p 8888:8888 thicket-tutorial
+docker run --rm -it --entrypoint /start.sh -v /var/run/docker.sock:/var/run/docker.sock --net jupyterhub --name jupyterhub -p 8888:8888 thicket-tutorial
 ```
 
 If you would rather your changes be preserved, run:
 
 ```bash
-$ docker run --rm -it --entrypoint /start.sh -v /var/run/docker.sock:/var/run/docker.sock -v .:/home/jovyan --net jupyterhub --name jupyterhub -p 8888:8888 thicket-tutorial
+docker run --rm -it --entrypoint /start.sh -v /var/run/docker.sock:/var/run/docker.sock -v .:/home/jovyan --net jupyterhub --name jupyterhub -p 8888:8888 thicket-tutorial
 ```
 
 Alternatively, if you want to run the notebooks automatically (i.e., non-interactive), you can simply run the `dev_scripts/autorun.sh` script. This script executes the same commands as above, but it uses the `run_all.sh` script as an entrypoint instead of `start.sh`.
@@ -68,31 +68,31 @@ If you want to use podman instead of docker, you can replace "docker" with "podm
 First initialize and start podman:
 
 ```bash
-$ podman machine init
-$ podman machine start
+podman machine init
+podman machine start
 ```
 
 Then build the container:
 
 ```bash
-$ podman build -t thicket-tutorial -f Dockerfile .
+podman build -t thicket-tutorial -f Dockerfile .
 ```
 
 Then create a network:
 
 ```bash
-$ podman network create jupyterhub
+podman network create jupyterhub
 ```
 
 Then launch the tutorial:
 
 ```bash
-$ podman run --rm -it --entrypoint /start.sh -v /var/run/docker.sock:/var/run/docker.sock --net jupyterhub --name jupyterhub -p 8888:8888 thicket-tutorial
+podman run --rm -it --entrypoint /start.sh -v /var/run/docker.sock:/var/run/docker.sock --net jupyterhub --name jupyterhub -p 8888:8888 thicket-tutorial
 ```
 
 Clean up after you are done:
 ```bash
-$ podman machine stop
+podman machine stop
 ```
 
 ### Deploying the Tutorial with Kubernetes
@@ -115,7 +115,7 @@ with [gcloud auth login](https://cloud.google.com/sdk/gcloud/reference/auth/logi
 
 ```bash
 export GOOGLE_PROJECT=myproject
-gcloud container clusters create flux-jupyter --project $GOOGLE_PROJECT \
+gcloud container clusters create thicket-tutorial-jupyter --project $GOOGLE_PROJECT \
     --zone us-central1-a --machine-type n1-standard-2 \
     --num-nodes=4 --enable-network-policy --enable-intra-node-visibility
 ```
@@ -886,10 +886,10 @@ And here is how to deploy, assuming the default namespace. Please choose your cl
 
 ```bash
 # This is for Google Cloud
-helm install flux-jupyter jupyterhub/jupyterhub --values gcp/config.yaml
+helm install thicket-tutorial-jupyter jupyterhub/jupyterhub --values gcp/config.yaml
 
 # This is for Amazon EKS without SSL
-helm install flux-jupyter jupyterhub/jupyterhub --values aws/config-aws.yaml
+helm install thicket-tutorial-jupyter jupyterhub/jupyterhub --values aws/config-aws.yaml
 ```
 
 If you mess something up, you can change the file and run `helm upgrade`:
@@ -910,19 +910,20 @@ to terminate, and then start freshly. When you run a command, also note that the
 You can see progress in another terminal:
 
 ```bash
-$ kubectl get pods
+kubectl get pods
 ```
 
 or try watching:
 
 ```bash
-$ kubectl get pods --watch
+kubectl get pods --watch
 ```
 
 When it's done, you should see:
 
 ```bash
-$ kubectl get pods
+kubectl get pods
+
 NAME                              READY   STATUS    RESTARTS   AGE
 continuous-image-puller-nvr4g     1/1     Running   0          5m31s
 hub-7d59dfb748-mrfdv              1/1     Running   0          5m31s
@@ -1041,13 +1042,13 @@ and you can look at logs.
 For both:
 
 ```bash
-helm uninstall flux-jupyter
+helm uninstall thicket-tutorial-jupyter
 ```
 
 For Google Cloud:
 
 ```bash
-gcloud container clusters delete flux-jupyter
+gcloud container clusters delete thicket-tutorial-jupyter
 ```
 
 For AWS:
