@@ -100,6 +100,7 @@ $ podman machine stop
 This tutorial borrows from the infrastructure created by [Vanessa Sochat](https://github.com/vsoch) and [Dan Milroy](https://github.com/milroy) for the [Flux Tutorial](https://github.com/flux-framework/Tutorials/tree/2024-radiuss-aws/2024-RADIUSS-AWS/JupyterNotebook). Thanks to this infrastructure, this tutorial can be deployed to Kubernetes using the following tools:
 * `kubectl`
 * `eksctl` (for AWS)
+* AWS CLI (optional, but recommended)
 * `gcloud` (for Google Cloud)
 
 The following instructions describe how to deploy this tutorial to Kubernetes on either Google Cloud or AWS.
