@@ -1,5 +1,5 @@
 ARG JUPYTERHUB_VERSION=3.0.2
-FROM jupyterhub/k8s-hub:$JUPYTERHUB_VERSION
+FROM --platform=linux/amd64 jupyterhub/k8s-hub:$JUPYTERHUB_VERSION
 
 # Add template override directory and copy our example
 # Replace the default
