@@ -1,4 +1,4 @@
-FROM alpine/git
+FROM --platform=linux/amd64 alpine/git
 
 ENV NB_USER=jovyan \
     NB_UID=1000 \
