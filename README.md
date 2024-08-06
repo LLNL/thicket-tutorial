@@ -898,13 +898,13 @@ helm install flux-jupyter jupyterhub/jupyterhub --values aws/config-aws-ssl.yaml
 If you mess something up, you can change the file and run `helm upgrade`:
 
 ```bash
-helm upgrade flux-jupyter jupyterhub/jupyterhub --values aws/config-aws-ssl.yaml
+helm upgrade thicket-tutorial-jupyter jupyterhub/jupyterhub --values aws/config-aws-ssl.yaml
 ```
 
 If you REALLY mess something up, you can tear the whole thing down and then install again:
 
 ```bash
-helm uninstall flux-jupyter
+helm uninstall thicket-tutorial-jupyter
 ```
 
 Note that in practice of bringing this up and down many times, we have seen the proxy-public
@@ -941,7 +941,7 @@ user-scheduler-587fcc5479-x6jmk   1/1     Running   0          5m31s
 <summary>Output of Terminal on Completed Install</summary>
 
 ```console
-NAME: flux-jupyter
+NAME: thicket-tutorial-jupyter
 LAST DEPLOYED: Sun Aug 27 15:00:15 2023
 NAMESPACE: default
 STATUS: deployed
@@ -960,7 +960,7 @@ NOTES:
 ### Installation info
 
   - Kubernetes namespace: default
-  - Helm release name:    flux-jupyter
+  - Helm release name:    thicket-tutorial-jupyter
   - Helm chart version:   3.0.2
   - JupyterHub version:   4.0.2
   - Hub pod packages:     See https://github.com/jupyterhub/zero-to-jupyterhub-k8s/blob/3.0.2/images/hub/requirements.txt
