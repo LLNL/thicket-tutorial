@@ -890,15 +890,12 @@ helm install flux-jupyter jupyterhub/jupyterhub --values gcp/config.yaml
 
 # This is for Amazon EKS without SSL
 helm install flux-jupyter jupyterhub/jupyterhub --values aws/config-aws.yaml
-
-# This is for Amazon EKS with SSL (assuming DNS is configured)
-helm install flux-jupyter jupyterhub/jupyterhub --values aws/config-aws-ssl.yaml
 ```
 
 If you mess something up, you can change the file and run `helm upgrade`:
 
 ```bash
-helm upgrade thicket-tutorial-jupyter jupyterhub/jupyterhub --values aws/config-aws-ssl.yaml
+helm upgrade thicket-tutorial-jupyter jupyterhub/jupyterhub --values aws/config-aws.yaml
 ```
 
 If you REALLY mess something up, you can tear the whole thing down and then install again:
