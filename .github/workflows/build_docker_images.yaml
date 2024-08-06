@@ -11,7 +11,7 @@ jobs:
       fail-fast: true
       matrix:
         tutorial_name: ["radiuss-2024"]
-        registry_url_base: ["ghcr.io/LLNL"]
+        registry_url_base: ["ghcr.io/llnl"]
         container_info: [["thicket-tutorial-hub", "docker/Dockerfile.hub"],
                          ["thicket-tutorial-init", "docker/Dockerfile.init"],
                          ["thicket-tutorial-spawn", "docker/Dockerfile.spawn"]]
