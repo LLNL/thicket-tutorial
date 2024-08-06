@@ -128,7 +128,7 @@ you should install.
 eksctl create cluster --config-file aws/eksctl-config.yaml
 
 # Create an EKS cluster with io1 node storage but no autoscaling, used for the RADIUSS 2023 tutorial
-eksctl create cluster --config-file aws/eksctl-radiuss-tutorial-2023.yaml
+eksctl create cluster --config-file aws/eksctl-radiuss-2024.yaml
 ```
 
 You can find vanilla (manual) instructions [here](https://z2jh.jupyter.org/en/stable/kubernetes/amazon/step-zero-aws-eks.html) if you
