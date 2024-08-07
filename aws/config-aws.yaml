@@ -43,6 +43,7 @@ singleuser:
   # This runs as the root user, who clones and changes ownership to uid 1000
   initContainers:
     - name: init-myservice
+      pullPolicy: Always
       image: ghcr.io/llnl/thicket-tutorial-init:radiuss-2024
       command: ["/entrypoint.sh"]
       volumeMounts:
