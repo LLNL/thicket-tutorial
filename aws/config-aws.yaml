@@ -16,7 +16,7 @@ hub:
 
   # This is the image I built based off of jupyterhub/k8s-hub, 3.0.2 at time of writing this
   image: 
-    name: ghcr.io/LLNL/thicket-jupyter-hub
+    name: ghcr.io/LLNL/thicket-tutorial-hub
     tag: "radiuss-2024"
     pullPolicy: Always
 
@@ -31,7 +31,7 @@ scheduling:
 # This is the "spawn" image
 singleuser:
   image:
-    name: ghcr.io/LLNL/thicket-jupyter-spawn
+    name: ghcr.io/LLNL/thicket-tutorial-spawn
     tag: "radiuss-2024"
     pullPolicy: Always
   cpu:
@@ -43,7 +43,7 @@ singleuser:
   # This runs as the root user, who clones and changes ownership to uid 1000
   initContainers:
     - name: init-myservice
-      image: ghcr.io/LLNL/thicket-jupyter-init:radiuss-2024
+      image: ghcr.io/LLNL/thicket-tutorial-init:radiuss-2024
       command: ["/entrypoint.sh"]
       volumeMounts:
         - name: thicket-tutorial
