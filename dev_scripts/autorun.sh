@@ -8,7 +8,7 @@ thicket_tutorial_root_dir=$(dirname -- $script_dir)
 
 cd $thicket_tutorial_root_dir
 
-docker build -t thicket-tutorial -f Dockerfile .
+docker build -t thicket-tutorial -f Dockerfile.local .
 set +e
 docker network ls | grep thicket_jupyterhub &> /dev/null
 network_exists=$?
