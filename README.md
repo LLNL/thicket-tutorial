@@ -20,16 +20,7 @@ all of the exercises on your own laptop using BinderHub.
 
 You find Thicket itself in its Github repository: https://github.com/llnl/thicket
 
-### Running the notebooks online
-
-We use [BinderHub](https://mybinder.org) to create a shareable and interactive
-environment of the notebooks within a live JupyterHub instance.
-
-You can access the interactive environment at this
-[link](https://mybinder.org/v2/gh/llnl/thicket-tutorial/develop)
-or by clicking the badge at the top of this file.
-
-### Running the notebooks locally
+### Running the notebooks
 
 #### Docker
 
