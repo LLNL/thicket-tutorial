@@ -63,7 +63,7 @@ podman machine start
 Then build the container:
 
 ```bash
-podman build -t thicket-tutorial -f Dockerfile .
+podman build -t thicket-tutorial -f Dockerfile.local .
 ```
 
 Then create a network:
