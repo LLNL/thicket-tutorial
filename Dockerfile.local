@@ -37,14 +37,7 @@ USER ${NB_USER}
 WORKDIR ${HOME}
 ENV PATH="${HOME}/.local/bin:${PATH}"
 
-COPY --chown=${NB_USER} ./notebooks/01_thicket_tutorial.ipynb ./notebooks/01_thicket_tutorial.ipynb
-COPY --chown=${NB_USER} ./notebooks/02_thicket_rajaperf_clustering.ipynb ./notebooks/02_thicket_rajaperf_clustering.ipynb
-COPY --chown=${NB_USER} ./notebooks/03_extrap-with-metadata-aggregated.ipynb ./notebooks/03_extrap-with-metadata-aggregated.ipynb
-COPY --chown=${NB_USER} ./notebooks/04_stats-functions.ipynb ./notebooks/04_stats-functions.ipynb
-COPY --chown=${NB_USER} ./notebooks/05_thicket_query_language.ipynb ./notebooks/05_thicket_query_language.ipynb
-COPY --chown=${NB_USER} ./notebooks/06_groupby_aggregate_of_multirun_data.ipynb ./notebooks/06_groupby_aggregate_of_multirun_data.ipynb
-COPY --chown=${NB_USER} ./notebooks/08A_composing_parallel_sorting_data.ipynb ./notebooks/08A_composing_parallel_sorting_data.ipynb
-COPY --chown=${NB_USER} ./notebooks/08B_modeling_parallel_sorting_data.ipynb ./notebooks/08B_modeling_parallel_sorting_data.ipynb
+COPY --chown=${NB_USER} ./notebooks/ ./notebooks/
 COPY --chown=${NB_USER} ./data/ ./data/
 
 COPY ./docker_scripts/entrypoint.sh /entrypoint.sh
