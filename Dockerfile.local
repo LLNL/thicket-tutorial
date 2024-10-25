@@ -46,6 +46,7 @@ COPY --chown=${NB_USER} ./notebooks/06_groupby_aggregate_of_multirun_data.ipynb 
 COPY --chown=${NB_USER} ./notebooks/07_nsight_compute.ipynb ./notebooks/07_nsight_compute.ipynb
 COPY --chown=${NB_USER} ./notebooks/08A_composing_parallel_sorting_data.ipynb ./notebooks/08A_composing_parallel_sorting_data.ipynb
 COPY --chown=${NB_USER} ./notebooks/08B_modeling_parallel_sorting_data.ipynb ./notebooks/08B_modeling_parallel_sorting_data.ipynb
+COPY --chown=${NB_USER} ./notebooks/09_Topdown_Speedup_Clustering.ipynb ./notebooks/09_Topdown_Speedup_Clustering.ipynb
 COPY --chown=${NB_USER} ./data/ ./data/
 
 COPY ./docker_scripts/entrypoint.sh /entrypoint.sh
