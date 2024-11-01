@@ -45,7 +45,7 @@ COPY --chown=${NB_USER} ./notebooks/05_thicket_query_language.ipynb ./notebooks/
 COPY --chown=${NB_USER} ./notebooks/06_groupby_aggregate_of_multirun_data.ipynb ./notebooks/06_groupby_aggregate_of_multirun_data.ipynb
 COPY --chown=${NB_USER} ./notebooks/08A_composing_parallel_sorting_data.ipynb ./notebooks/08A_composing_parallel_sorting_data.ipynb
 COPY --chown=${NB_USER} ./notebooks/08B_modeling_parallel_sorting_data.ipynb ./notebooks/08B_modeling_parallel_sorting_data.ipynb
-COPY --chown=${NB_USER} ./notebooks/09_Topdown_Speedup_Clustering.ipynb ./notebooks/09_Topdown_Speedup_Clustering.ipynb
+COPY --chown=${NB_USER} ./notebooks/09_tma_speedup_clustering.ipynb ./notebooks/09_tma_speedup_clustering.ipynb
 COPY --chown=${NB_USER} ./data/ ./data/
 
 COPY ./docker_scripts/entrypoint.sh /entrypoint.sh
