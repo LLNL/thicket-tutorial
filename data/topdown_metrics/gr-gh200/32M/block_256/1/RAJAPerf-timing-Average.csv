@@ -1,0 +1,76 @@
+Mean Runtime Report (sec.)  , 
+Kernel                      , RAJA_CUDA
+Kernel                      , block_256
+Basic_ARRAY_OF_PTRS         ,  0.004929
+Basic_COPY8                 ,  0.001843
+Basic_DAXPY                 ,  0.000572
+Basic_DAXPY_ATOMIC          ,  0.000867
+Basic_IF_QUAD               ,  0.000998
+Basic_INDEXLIST             ,   Not run
+Basic_INDEXLIST_3LOOP       ,  0.000918
+Basic_INIT3                 ,  0.000959
+Basic_INIT_VIEW1D           ,  0.000626
+Basic_INIT_VIEW1D_OFFSET    ,  0.000680
+Basic_MAT_MAT_SHARED        ,  0.102599
+Basic_MULADDSUB             ,  0.000908
+Basic_NESTED_INIT           ,  0.000639
+Basic_PI_ATOMIC             ,  0.059322
+Basic_PI_REDUCE             ,   Not run
+Basic_REDUCE3_INT           ,   Not run
+Basic_REDUCE_STRUCT         ,   Not run
+Basic_TRAP_INT              ,   Not run
+Basic_MULTI_REDUCE          ,   Not run
+Lcals_DIFF_PREDICT          ,  0.005978
+Lcals_EOS                   ,  0.000916
+Lcals_FIRST_DIFF            ,  0.000682
+Lcals_FIRST_MIN             ,   Not run
+Lcals_FIRST_SUM             ,  0.000776
+Lcals_GEN_LIN_RECUR         ,  0.001346
+Lcals_HYDRO_1D              ,  0.000725
+Lcals_HYDRO_2D              ,  0.002466
+Lcals_INT_PREDICT           ,  0.001434
+Lcals_PLANCKIAN             ,  0.000952
+Lcals_TRIDIAG_ELIM          ,  0.000950
+Polybench_2MM               ,  0.257621
+Polybench_3MM               ,  0.351158
+Polybench_ADI               ,  0.063676
+Polybench_ATAX              ,  0.002230
+Polybench_FDTD_2D           ,  0.033423
+Polybench_FLOYD_WARSHALL    ,  1.006051
+Polybench_GEMM              ,  0.158151
+Polybench_GEMVER            ,  0.002772
+Polybench_GESUMMV           ,  0.001315
+Polybench_HEAT_3D           ,  0.008801
+Polybench_JACOBI_1D         ,  0.005999
+Polybench_JACOBI_2D         ,  0.015142
+Polybench_MVT               ,  0.003458
+Stream_ADD                  ,  0.000853
+Stream_COPY                 ,  0.000802
+Stream_DOT                  ,   Not run
+Stream_MUL                  ,  0.000830
+Stream_TRIAD                ,  0.000885
+Apps_CONVECTION3DPA         ,   Not run
+Apps_DEL_DOT_VEC_2D         ,  0.001307
+Apps_DIFFUSION3DPA          ,   Not run
+Apps_EDGE3D                 ,  0.284365
+Apps_ENERGY                 ,  0.003423
+Apps_FIR                    ,  0.000431
+Apps_LTIMES                 ,  0.004708
+Apps_LTIMES_NOVIEW          ,  0.004688
+Apps_MASS3DEA               ,   Not run
+Apps_MASS3DPA               ,   Not run
+Apps_MATVEC_3D_STENCIL      ,  0.002130
+Apps_NODAL_ACCUMULATION_3D  ,  0.001530
+Apps_PRESSURE               ,  0.001190
+Apps_VOL3D                  ,  0.001179
+Apps_ZONAL_ACCUMULATION_3D  ,  0.000874
+Algorithm_SCAN              ,   Not run
+Algorithm_SORT              ,   Not run
+Algorithm_SORTPAIRS         ,   Not run
+Algorithm_REDUCE_SUM        ,   Not run
+Algorithm_MEMSET            ,  0.000776
+Algorithm_MEMCPY            ,  0.000842
+Algorithm_ATOMIC            ,   Not run
+Algorithm_HISTOGRAM         ,   Not run
+Comm_HALO_PACKING           ,  0.004524
+Comm_HALO_PACKING_FUSED     ,   Not run
