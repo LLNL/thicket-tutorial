@@ -1,5 +1,7 @@
 git+https://github.com/LLNL/thicket.git@develop-2024-11-02
 ipython==7.15.0
 extrap
+nbformat>=4.2.0
+plotly
 scikit-learn
 seaborn
